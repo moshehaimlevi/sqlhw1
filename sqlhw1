@@ -1,0 +1,32 @@
+CREATE TABLE shopping ׁ(id INTEGER PRIMARY KEY, name TEXT, amount
+             INTEGER);
+             DROP TABLE shopping
+CREATE TABLE shopping- יצירת טבלה בשם שופינג 
+id integer primary key - תעודת זהות עם מפתח עיקרי כי בכל טבלה חייב מפתח עיקרי אם לא הוא יקרוס וכמובן אינטג’ר כי צריך מספרים בשביל לקלוט ת’ז.
+NAME TEXT- קליטת שם עם טקסט בשביל לכתוב באותיות ומילים כמובן 
+AMOUNT INTEGER - קליטת סכום ושוב עם אינטג’ר בשביל לשים סכום במספרים 
+DROP TABLE SHOPPING - זה נועד עבור למחוק את אותו טבלה שיצרנו 
+
+2) ALTER table shopping RENAME to shopp
+ALTER table shopp RENAME to shopping
+ a)ALTER table shopping RENAME to shopp - סעיף שינוי אלטר לטבלת שופינג לשינוי שם שופפ
+b)ALTER table shopp RENAME to shopping -  
+שינוי טבלה בחזרה משופפ לשופינג
+
+3). Insert rows into table:
+INSERT INTO shopping VALUES (1, 'Avocado', 5); - הכנסת ערך אבוקדו לטבלת שופינג עם סכום של  5 בסה”כ בערך מספר 1
+INSERT INTO shopping VALUES (2, 'Milk', 2); - הכנסת ערך חלב בסכום של שתי קרטוני חלב לערך מספר 2
+INSERT INTO shopping VALUES (3, 'Bread', 3);- הכנסת ערך לחם עם סכום של 3 כיכרות לחם בערך מספר 3
+INSERT INTO shopping VALUES (4, 'Chocolate', 8);- הכנסת ערך שוקולד בסכום של 8 שוקולדים לערך מספר 4
+INSERT INTO shopping VALUES (5, 'Bamba', 5); - הכנסת ערך במבה לטבלת שופינג עם סכום של 5 במבות לערך מספר 5
+INSERT INTO shopping VALUES (6, 'Orange', 10);- הכנסת ערך תפוזים לטבלת שופינג עם סכום של 10 תפוזים לערך מספר 6
+
+4. Display table:
+select * from shopping -    סעיף זה מדבר על לקיחת כל הנתונים ששמנו בטבלת שופינג ואת מה שהוא מכיל בפנים בתוך הפרטים 
+
+5. ?
+SELECT id, name FROM shopping - סעיף זה מדבר על לקיחת ערכים שם ותעודת זהות ואת הפרטים שהם מכילים בפנים
+6. ?
+SELECT * FROM shopping WHERE amount > 5 - ערכים שמכילים כמות של יותר מ5 מוצרים בתוך אותו ערך
+SELECT * FROM shopping WHERE amount = 2 - לקיחת ערך מטבלת שופינג ערך שיש בו סכום שהוא שווה ל2 פריטים
+SELECT * FROM shopping WHERE name LIKE 'Bamba' - לקיחת ערך מטבלת שופינג שהערך השם שלו הוא במבה 
