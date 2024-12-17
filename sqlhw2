@@ -1,0 +1,68 @@
+# SECTION NUMBER 7:
+DELETE from shopping WHERE name like 'Orange'; שאילתה זו מוחקת את את הערך "אורנג" מטבלת שופינג 
+
+# SECTION NUMBER 8:
+UPDATE shopping SET name = 'Bisli' WHERE name LIKE 'Bamba' -  שאילתה זו מעדכנת את הערך "במבה" לערך אחר בשם "ביסלי" בטבלת שופינג 
+
+UPDATE shopping SET amount=1 WHERE name LIKE 'Milk' - שאילתה זו מעדכנת את הערך "חלב" לסכום 1 בטבלת שופינג 
+
+# SECTION NUMBER 9:
+ALTER TABLE shopping ADD COLUMN maavar - שאילתה זו מדברת מדברת על אופציה "אלטר טייבל" שזה חלק מאופציות השינויים שיש ובמקרה זה היא מוסיפה עמודה נוספת בשם "מעבר" לטבלת שופינג
+
+# SECTION NUMBER 10:
+UPDATE shopping SET maavar=6 WHERE id=1; - שאילתה זו מוסיפה את הסכום 6 בעמודת "מעבר" לאינדקס במספר 1 שהערך הוא "אבוקדו" במקרה זה לטבלת שופינג 
+UPDATE shopping SET maavar=3 WHERE id=2; - שאילתה זו מוסיפה את הסכום 3 בעמודת "מעבר" לאינדקס מספר 2 שהערך הוא "חלב" לטבלת שופינג 
+UPDATE shopping SET maavar=12 WHERE id=3; - שאילתה זו מוסיפה את הסכום 12 בעמודת "מעבר" לאינדקס מספר 3 שהערך הוא "לחם" לטבלת שופינג 
+UPDATE shopping SET maavar=8 WHERE id=4; - שאילתה זו מוסיפה את הסכום 8 בעמודת "מעבר" לאינדקס מספר 4 שהערך הוא "שוקולד" לטבלת שופינג 
+UPDATE shopping SET maavar=5 WHERE id=5; - שאילתה זו מוסיפה את הסכום 5 בעמודת "מעבר" לאינדקס מספר 5 שהערך הוא "ביסלי" לטבלת שופינג 
+
+# SECTION NUMBER 11:
+SELECT * FROM shopping WHERE amount > 1 AND maavar > 5 - שאילתה זו בוחרת מטבלת שופינג את הערכים שבהם הסכום בכמות יותר גדולה מ1 והסכום בעמודת "מעבר" יותר גדולה מ5 במקרה זה נמצאו 3 ערכים שהם: אבוקדו, לחם ושוקולד.
+SELECT * FROM shopping WHERE maavar BETWEEN 3 AND 5 - שאילתה זו בוחרת מטבלת שופינג את הערכים שהבם הסכום עמודת "מעבר" הם בין 3 לבין 5 הערכים שנמצאו הם: חלב וביסלי
+
+# SECTION NUMBER 12:
+SELECT * FROM shopping ORDER BY maavar -  שאילתה זו בוחרת את כל עמודת "מעבר" בטבלת שופינג על פי סכום הקטן לגדול שהם: חלב, ביסלי, אבוקדו, שוקולד ולחם שהוא עם הסכום הגדול ביותר בעמודה
+SELECT * FROM shopping ORDER BY maavar DESC - שאילתה זו עובדת כמעט אותו הדבר בסעיף הקודם היא נותנת את העמודה "מעבר" רק הפעם המסכום הגדול ביותר לקטן ביותר בגלל אופציית DESC
+
+# SECTION NUMBER 13:
+CREATE TABLE books (id INTEGER PRIMARY KEY, name TEXT); - שאילתה זו יוצרת טבלה בשם "בוקס" עם תז כמספר ועם מפתח עיקרי שלר יקרוס ושם כטקסט להוסיף
+INSERT INTO books VALUES (1, 'SQL PROGRAMMING'); - שאילתה זו מוסיפה את ערך "sql programming" לערך מספר 1 בטבלת "בוקס"
+INSERT INTO books VALUES (2, 'CSHARP PROGRAMMING'); -  שאילתה זו מוסיפה את ערך 'CSHARP PROGRAMMING' לטבלת "בוקס" לערך מספר 2
+DELETE FROM books; - שאילתה זו מוחקת את כל הנתונים שיש בטבלת "בוקס" אך לא מוחקת את הטבלה עצמה כאשר רק השם של הטבלה נשאר
+
+# SECTION NUMBER 14:
+SELECT COUNT(*)from shopping - שאילתה זו מציגה את הערכים שיש בתוך טבלת שופינג כאשר כמות הערכים שיש הם 5
+SELECT MAX(amount) from shopping - שאילתה זו בוחרת את הסכום הכי גבוה בעמודת סכום מטבלת שופינג שהסכום הוא 8 בערך של שוקולד
+SELECT AVG(amount) from shopping - שאילתה זו מציגה את הסכום הממוצע בעמודת סכום שהממוצע הוא 4.4 בטבלת שופינג
+SELECT MIN(amount) from shopping - שאילתה זו מציגה את הערך עם הסכום הכי קטן שיש בטבלת שופינג בעמודת סכום שהוא ערך חלב עם סכום של 1
+
+# SECTION NUMBER 15:
+INSERT INTO shopping VALUES (6, 'Onions', 3, 6); - שאילתה זו מכניסה את ערך "בצל" לאינקס מספר 6 ומוסיפה בו את העמודות הבאות סכום שהוא 3 ועמודת מעבר שהסכום הוא 6 
+INSERT INTO shopping VALUES (7, 'Orio', 1, 8); - שאילתה זו מכניסה את הערך "אוריאו" לאינדקס מספר 7 ומוסיפה בו את העמודות הבאות עם הסכומים הבאים בעמודת סכום הסכום הוא 1 ובעמודת מעבר הסכום הוא 8
+Select maavar, COUNT(*)FROM shopping GROUP BY maavar - שאילתה זו מציגה את עמודת "מעבר" וסופרת את העמודת מטבלת שופינג על ידי עמודת "מעבר" #משום מה הוא לא מציג לי את עמודת אינדקס 6 ו-7
+
+# SECTION NUMBER 16:
+SELECT id AS "SECRET", name, amount, maavar FROM shopping -  שאילתה זו בוחרת את השם "תז" ומחליפה אותו בשם אחר שהוא "סוד" בטבלת שופינג זה רק מחליף את השם ולא משפיע על עמודות אחרות בטבלה
+
+# SECTION NUMBER 17:
+Select maavar, COUNT(*)FROM shopping GROUP BY maavar HAVING COUNT(*)>1 - שאילתה זו בוחרת את עמודת "מעבר" בטבלת שופינג וסופרת את את כמות הערכים פעמיים באותו עמודת מעבר במקרה זה "בצל" , "אוריאו" נבחרו
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
