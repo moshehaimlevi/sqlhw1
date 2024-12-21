@@ -1,0 +1,62 @@
+#############################   QUESTION NUMBER 1:
+SELECT exam_year AS exam_per_year, 
+       AVG(grade) AS avg_grade
+FROM grades
+GROUP BY exam_year;
+
+#############################  QUESTION NUMBER 2:
+SELECT exam_year AS exam_per_year,
+    student_name AS all_students_names, 
+    AVG(grade) AS avg_grades
+FROM grades
+WHERE exam_year = 2024
+GROUP BY exam_year, student_name;
+
+############################ QUESTION NUMBER 3:
+SELECT exam_year AS exam_per_year, subject_name AS subject_category,
+    MIN(grade) AS lowest_grade,
+    MAX(grade) AS highest_grade
+FROM grades
+GROUP BY exam_year, subject_name;
+
+############################## QUESTION NUMBER 4:
+SELECT exam_year AS exam_per_year, subject_name, 
+COUNT (*) AS subject_count
+FROM grades
+GROUP BY exam_year, subject_name 
+
+############################# QUESTION NUMBER 5:
+SELECT  subject_name, 
+AVG(grade) as grade_sum
+FROM grades
+WHERE grade > 85
+GROUP BY grade, subject_name 
+
+############################# QUESTION NUMBER 6:      
+SELECT grade AS grade_value, subject_name
+FROM grades
+WHERE grade > 90
+GROUP BY grade, subject_name;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
