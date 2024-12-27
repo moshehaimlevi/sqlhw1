@@ -1,0 +1,179 @@
+###################### SECTION NUMBER 1:
+
+1.
+SELECT courses.name AS lecture_subject, Lecturers.name AS lecturers_name 
+FROM courses INNER JOIN lecturers ON Lecturers.lecturer_id = Courses.lecturer_id; 
+
+2.
+SELECT courses.name AS lecture_subject, Lecturers.name AS lecturers_name 
+FROM courses LEFT JOIN lecturers ON Lecturers.lecturer_id = Courses.lecturer_id; 
+
+4. 
+SELECT Lecturers.name AS lecturers_name, Courses.name AS Lecture_subject
+FROM Courses
+LEFT JOIN Lecturers ON Lecturers.lecturer_id = Courses.lecturer_id
+WHERE Courses.lecturer_id IS NULL;
+
+6.
+SELECT Lecturers.name AS lecturers_name, Courses.name AS Lecture_subject
+FROM Courses
+FULL JOIN Lecturers ON Lecturers.lecturer_id = Courses.lecturer_id
+
+10.
+SELECT count(*) AS total_subjects
+FROM Courses
+
+
+
+
+########################## SECTION NUMBER 2:
+15.
+SELECT Employees.name AS employees_name, Departments.name AS Department_section
+FROM employees INNER JOIN Departments ON Employees.department_id = Departments.department_id;
+
+16.
+SELECT Employees.name AS employees_name, Departments.name AS Department_section
+FROM employees LEFT JOIN Departments ON Employees.department_id = Departments.department_id;
+
+17.
+SELECT Employees.name AS employees_name, Departments.name AS Department_section
+FROM Employees LEFT JOIN Departments 
+ON Employees.department_id = Departments.department_id
+WHERE Departments.department_id IS NULL;
+
+18.
+SELECT COUNT (*) as total_employees 
+FROM Employees
+
+19.
+SELECT Employees.name AS employees_name,
+AVG(Employees.salary) AS department_avg_salary
+FROM Employees
+GROUP BY Employees.name;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
